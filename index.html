@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natso Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+/* Define custom CSS variables in the :root selector */
+:root {
+  --primary-color: rgb(6, 212, 34);
+  --button-color: rgb(18, 167, 38);
+  --on-primary: rgba(197, 196, 196, 0.5);
+  --on-background: rgb(27, 26, 26);
+  --on-background-alt: rgba(0, 0, 0, 0.979);
+  --background: rgb(255, 255, 255);
+  --o-background :rgba(202, 201, 201, 0.8);
+  --shadow: 0px 3px 10px 8px rgba(0,0,0,0.75);
+}
+/* Define alternate values for dark theme */
+[data-theme="dark"] {
+  --primary-color: rgb(150, 65, 255);
+  --button-color:  rgb(109, 25, 211);
+  --on-primary:rgb( 0 0 0 / 50%); 
+  --on-background: rgba(255, 255, 255, 0.9);
+  --on-background-alt: rgba(255, 255, 255, 0.966);
+  --background: #121212;
+  --o-background :rgb(10 10 10 / 80%);
+  --shadow:  0px 4px 10px 6px rgba(29, 7, 65, 0.75);
+}
+
+html {
+    min-width:100vw;
+   
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+  margin: 0;
+ 
+  color: var(--on-background);
+  background-color: var(--background);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 152 152'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='temple' fill='%236c26dd' fill-opacity='0.3'%3E%3Cpath d='M152 150v2H0v-2h28v-8H8v-20H0v-2h8V80h42v20h20v42H30v8h90v-8H80v-42h20V80h42v40h8V30h-8v40h-42V50H80V8h40V0h2v8h20v20h8V0h2v150zm-2 0v-28h-8v20h-20v8h28zM82 30v18h18V30H82zm20 18h20v20h18V30h-20V10H82v18h20v20zm0 2v18h18V50h-18zm20-22h18V10h-18v18zm-54 92v-18H50v18h18zm-20-18H28V82H10v38h20v20h38v-18H48v-20zm0-2V82H30v18h18zm-20 22H10v18h18v-18zm54 0v18h38v-20h20V82h-18v20h-20v20H82zm18-20H82v18h18v-18zm2-2h18V82h-18v18zm20 40v-18h18v18h-18zM30 0h-2v8H8v20H0v2h8v40h42V50h20V8H30V0zm20 48h18V30H50v18zm18-20H48v20H28v20H10V30h20V10h38v18zM30 50h18v18H30V50zm-2-40H10v18h18V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+section {
+  min-height: 100vh;
+  font-family: "Comfortaa", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.heading{
+  text-shadow: var(--shadow);
+
+}
+h1 {
+  font-size: 4rem;
+  color: var(--primary-color);
+  font-family:  sans-serif;
+}
+
+h2 {
+  color: var(--on-background-alt);
+  font-size: 2rem;
+  font-weight: normal;
+}
+.backup{
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  z-index: 100;
+  top: 10%;
+  left: 0%;
+}
+
+
+/* Navigation */
+nav {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  z-index: 10;
+  position: fixed;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  padding: 25px;
+  width: 100vw;
+  background-color: var(--on-primary);
+}
+
+nav a{
+  margin-right: 25px;
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--on-background);
+  border-bottom: 3px solid;
+}
+
+/* Home Section */
+
+.animated-text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+span{
+  color: var(--primary-color);
+}
+.title-group {
+  text-align: center;
+}
+
+/* About Section */
+#about{
+  display: flex;
+  align-items: center;
+}
+#about h1{
+  margin-top: 12vh;
+}
+
+#my-desc{
+  width: 80%;
+  text-align: justify;
+  background: var(--o-background);
+  box-shadow: var(--shadow);
+  color: var(--on-primary);
+  border-radius: 10px;
+  padding: 30px;
+
+  animation-name: slide;
+  animation-duration: 8s;
+  animation-iteration-count: 1;
+}
+h3 {
+  color: var(--on-background-alt);
+  font-size: 1.62rem;
+}
+
+@keyframes slide {
+  0%{
+    filter: brightness(0%);
+  }
+  50%{
+    filter: brightness(50%);
+  }
+  100%{
+    filter: brightness(100%);
+  }
+}
+
+/* Projects Section */
+#projects h1{
+  margin-top: 12vh;
+}
+
+.project-container{
+  padding: 10vh 3vh;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  gap: 2vh;
+  background: var(--o-background);
+}
+
+.project-cards{
+  display: flex;
+  /* justify-content: center; */
+  padding: 0 2vh;
+  text-align: start;
+  flex-direction: column;
+  scale: 0.9;
+  border-radius: 2vh;
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow);
+  max-height: 400px;
+  max-width: 300px;
+  height: 400px;
+  width: 280px;
+}
+
+.project-cards:hover{
+  scale: 1;
+  filter: brightness(112%);
+}
+.p-title{
+  text-align: center;
+  margin-bottom: 0;
+
+}
+
+.r-container{
+  width: 80%;
+  display: flex;
+  gap: 6rem;
+  background: transparent;
+  padding: 3rem;
+}
+.R-btn{
+  padding: 2vh;
+  border-radius: 3vh;
+  border: none;
+  min-width: auto ;
+  width: 18rem;
+  color: var(--on-background-alt);
+  font-size: 1.37rem;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--button-color);
+  scale: 0.8;
+}
+.R-btn:hover{
+  filter: brightness(110%);
+  box-shadow: var(--shadow);
+}
+.btn{
+  padding: 2vh;
+  border-radius: 3vh;
+  border: none;
+  width: 90%;
+  left: 5%;
+  bottom: 7%;
+  color: var(--on-background-alt);
+  font-size: 1.37rem;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--button-color);
+  scale: 0.8;
+  position: absolute;
+}
+.btn:hover{
+  box-shadow: var(--shadow);
+  filter: brightness(130%);
+  scale: 0.9;
+}
+button:active{
+  transform: translateY(3px);
+  scale: 0.85;
+}
+h4{
+  color: var(--on-background-alt);
+  font-size: 1.25rem;
+}
+
+
+
+/* Contact Section */
+
+#contact h1{
+  margin-top: 12vh;
+}
+
+.socail-icons{
+  margin-top: 4rem;
+  margin-left: 2.4rem;
+  
+
+}
+.fa-brands {
+  font-size: 6.25rem;
+  margin-right: 3.125rem;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.fa-brands:hover {
+  color: var(--on-background);
+}
+.email{
+  margin-left: 2.4rem;
+  letter-spacing: 0.06rem ;
+  margin-top: 8rem;
+  font-size: 2.4rem;
+  font-family: cursive;
+  color:var(--primary-color)
+}
+
+/* Dark Mode Toggle */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  position: fixed;
+  right: 1.56rem;
+  top: 1.87rem;
+}
+
+.theme-switch-wrapper span {
+  margin-right: 0.6rem;
+  font-size: 1rem;
+}
+
+.toggle-text {
+  position: relative;
+  top: -4px;
+  right: 5px;
+  color: var(--on-background);
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider::before {
+  background: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background: var(--primary-color);
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::before {
+  border-radius: 50%;
+}
+
+.fas {
+  font-size: 1.87rem;
+  margin-right: 5px;
+}
+
+
+
+
+/* animations */
+
+.animated-text{
+  animation-name: load;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+@keyframes load {
+  0% { opacity: 0; 
+    color: black;
+  }
+  100% { opacity: 1; }
+}
+#a1{
+  animation-name: subtext;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+}
+#a2{
+  animation-name: subtext;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+#a3{
+  animation-name: subtext;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+}
+#a4{
+  animation-name: subtext;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+}
+#a5{
+  animation-name: subtext;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+}
+#a6{
+  animation-name: subtext;
+  animation-duration: 5.7s;
+  animation-timing-function: ease-in-out;
+}
+#a7{
+  animation-name: subtext;
+  animation-duration: 6.2s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes subtext {
+  0% { opacity: 0; 
+  }
+  100% { opacity: 1; }
+}
+
+@media (min-width:700px) and (max-width:920px){
+    h1{
+        /* color: red; */
+    }
+    :root {
+        margin: 0;
+    }
+
+   .theme-switch-wrapper {
+  display: none;
+  margin-top: 5.3rem;
+  margin-left: 2rem;
+  align-items: normal;
+  z-index: 100;
+  position: static;
+}
+.r-container{
+  width: 80%;
+  display: flex;
+  gap: 0.8rem;
+  background: transparent;
+  padding: 1rem;
+}
+.R-btn{
+  padding: 2rem;
+  border-radius: 2.3rem;
+  border: none;
+  min-width: auto ;
+  width: auto;
+  color: var(--on-background-alt);
+  font-size: 1.37rem;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--button-color);
+  scale: 0.8;
+}
+    section {
+        min-height: 100vh;
+        min-width:100vw;
+
+    }
+    .backup{
+  visibility: visible;
+  display: flex;
+  font-size: 2.4rem;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  z-index: 100;
+  top: 10%;
+  left: 8%;
+}
+    nav {
+    position: fixed;
+    z-index: 4px;
+    padding: 22px;
+    }
+   .animated-text{
+    visibility: hidden;
+    }
+    .sub-text{
+      visibility: hidden;
+    } 
+    .email{
+  font-size: 0.8rem;
+}
+
+}
+@media (min-width:200px) and (max-width:700px){
+    h1{
+        /* color: red; */
+    }
+    .r-container{
+  width: 80%;
+  display: flex;
+  gap: 0.8rem;
+  background: transparent;
+  padding: 1rem;
+}
+.R-btn{
+  padding: 2rem;
+  border-radius: 2.3rem;
+  border: none;
+  min-width: auto ;
+  width: auto;
+  color: var(--on-background-alt);
+  font-size: 1.37rem;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--button-color);
+  scale: 0.8;
+}
+.email{
+  font-size: 0.8rem;
+}
+    .animated-text{
+    visibility: hidden;
+    }
+    .sub-text{
+      visibility: hidden;
+    } 
+    :root {
+        margin: 0;
+    }
+    .backup{
+  visibility: visible;
+  display: flex;
+  font-size: 2.4rem;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  z-index: 100;
+  top: 10%;
+  left: 8%;
+}
+
+     .theme-switch-wrapper {
+  display: none;
+  margin-top: 5.3rem;
+  margin-left: 2rem;
+  align-items: normal;
+  z-index: 100;
+  position: static;
+}
+    section {
+        min-height: 100vh;
+        min-width:100vw;
+
+    }
+    nav {
+    position: fixed;
+    z-index: 4px;
+    padding: 22px;
+    }
+   .animated-text{
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: inherit;
+   
+    font-size: 3rem;
+    }
+    .sub-text{
+      display: flex;
+     
+    scale: 2.2rem; 
+    } 
+
+}
+
+
+/* end of css */
+
+    </style>
+</head>
+<body>
+
+    <!-- navigation -->
+    <nav id="nav">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+        <!-- Dark mode switch -->
+        <div class="theme-switch-wrapper">
+          <span id="toogle-icon">
+               <span class="toogle-text" id="toogle-text">Light mode</span>
+          </span>
+          <label class="theme-switch">
+              <input type="checkbox" checked="true">
+              <div class="slider round"></div>
+          </label>
+      </div>
+    <!-- Home Screen -->
+
+
+    <section id="home">
+
+        <div class="title-group">
+            <h1 class="animated-text" style="text-align: left; color:var(--on-background-alt);"><pre><span id="span1" style="color: var(--primary-color);" >Hello!</span> I am Vizosul Natso</pre></h1>
+            <h2 class="sub-text" >
+                <span id="a1" style="color: var(--primary-color);">Explore </span>
+                <Span id="a2" style="color: var(--primary-color);">my </Span> 
+                <Span id="a4" style="color: var(--primary-color);">projects </Span>  
+                <Span id="a5" style="color: var(--primary-color);">and </Span>
+                <Span id="a6" style="color: var(--primary-color);">skills </Span>
+                <span id="a7" style="color: var(--primary-color);">below</span>
+            </h2>
+        </div>
+        <div class="backup">
+          <h1  style="text-align: left; color:var(--on-background-alt);">Hello! <br>I am Vizosul Natso</h1>
+          <h2 style="color: var(--primary-color);">Explore my Projects <br>and skills below</h2>
+        </div>
+    </section>
+    <!-- about section -->
+    <section id="about">
+        <h1 class="heading">About Me</h1>
+        <div id="my-desc">
+            <h3 id="desc">I am an enthusiastic and passionate programmer, who enjoy programming to the core.
+                My curiosity and drive propelled me into the world of C, C++, Java, and beyond.<br>
+                Leadership roles and participation in community service have taught me the importance of vision, hard work, and the impact of giving back. These experiences have shaped me into a well-rounded individual who values innovation, accountability, and community. I'm on the lookout for opportunities that challenge me, allow for growth, and contribute positively to the organization and community at large</h3> 
+            <h3><ul><h2>Key skills</h2>
+                <li>Programming Languages: C, C++, Java, JavaScript</li>
+                <li>Database: SQL, MySQL</li>
+                <li>Web Technologies: HTML, CSS, BootStrap</li>
+                <li>Version Control: Git, Github</li>
+                <li>Tools and Frameworks: JDBC, Hibernate, Servlets, Spring, Spring Boot</li>
+                <li>Soft Skills: Leadership, Teamwork, Management, Communication</li>
+            </ul></h3>
+            <br>
+        </div>
+        <div class="r-container">
+          <a href="https://drive.google.com/file/d/1VJEpfL9yo_-AGhBRz2YyOUmi7btKHLc6/view?usp=drive_link" target="_blank" ><button class="R-btn">View CV</button></a>
+          <a href=" https://drive.usercontent.google.com/u/1/uc?id=1VJEpfL9yo_-AGhBRz2YyOUmi7btKHLc6&export=download" download="" ><button class="R-btn">Download Cv</button></a>
+        </div>
+ 
+    </section>
+
+    <!-- projects section -->
+    <section id="projects">
+        <h1 class="heading">Projects</h1>
+        <div class="project-container">
+            <div class="project-cards" id="1">
+               <h3 class="p-title">Math Game</h3>  
+                <h4 class="p-item">A mathematical base game to test user knowledge on mathematics. Consist of timer and three difficulty levels. Utilize DOM for great UI experience.</h4>
+                <a href="https://vizosul-natso.github.io/SimpleMathGame/" title="click here to view project" target="_blank" class="btns"><button  class="btn">Check Out</button></a>
+            </div>
+            <div class="project-cards" id="2">
+               <h3 class="p-title">Calculator</h3>  
+                <h4 class="p-item">A calculator web application with basic arithmetic operations. It includes HTML for structure, CSS for styling and responsiveness, and JavaScript for functionality.</h4>
+                <a href="https://vizosul-natso.github.io/basic_calculator/" title="click here to view project" target="_blank" class="btns"><button class="btn">Check Out</button></a>
+            </div>
+            <div class="project-cards" id="3">
+               <h3 class="p-title">Joke Teller</h3>  
+                <h4 class="p-item">A bot joke teller designed with html,css and Js. Fetching jokes from an API, converts them to speech using the VoiceRSS API, and displays them on the webpage.</h4>
+                <a href="https://vizosul-natso.github.io/Joke-Teller/" title="click here to view project" target="_blank" class="btns"><button class="btn">Check Out</button></a>
+            </div>
+            <div class="project-cards" id="4">
+               <h3 class="p-title">Picture-in-Picture</h3>  
+                <h4 class="p-item">A picture in picture web applicatio that retrieves the user's display media, plays it in the video element, and enables picture-in-picture mode upon button click.</h4>
+                <a href="https://vizosul-natso.github.io/PictureInPicture/" title="click here to view project" target="_blank" class="btns"><button class="btn">Check Out</button></a>
+            </div>
+            <div class="project-cards" id="5">
+               <h3 class="p-title">Quote Generator</h3>  
+                <h4 class="p-item">A responsive quote generator. Designed with web Technologies,the JS contains an array of quotes and JavaScript logic to display a random quote. Also facitity for sharing the quote on WhatsApp.</h4>
+                <a href="https://vizosul-natso.github.io/QuoteGenerator/" title="click here to view project" target="_blank" class="btns"><button class="btn">Check Out</button></a>
+            </div>
+            <div class="project-cards" id="6">
+               <h3 class="p-title">Dice Game</h3>  
+                <h4 class="p-item">A simple dice game web application using HTML, CSS, and JavaScript. JavaScript functions handle the random generation of dice values, updating the dice images, and determining the winner based on the rolled values.</h4>
+                <a href="https://vizosul-natso.github.io/Dice-Game/" title="click here to view project" target="_blank" class="btns"><button class="btn">Check Out</button></a>
+            </div>
+            <div class="project-cards" id="7">
+               <h3 class="p-title">Employee Management System</h3>  
+                <h4 class="p-item"> A web interface for an Employee Management System. It includes sections for inserting, updating, deleting, finding, and finding all employee details.</h4>
+                <a href="https://vizosul-natso.github.io/Employee_Management_Sytem/" title="click here to view project" target="_blank" class="btns"><button class="btn">Check Out</button></a>
+            </div>
+            <div class="project-cards" id="8">
+               <h3 class="p-title">Interactive Resume</h3>  
+                <h4 class="p-item">An interactive online resume using HTML, CSS, and
+                    JavaScript. It includes animations, interactive elements, and engaging visuals.</h4>
+                <a href="" title="click here to view project" target="_blank" class="btns"><button class="btn">Check Out</button></a>
+            </div>
+        </div>
+    </section>
+    <!-- contact section -->
+    <section id="contact">
+        <h1 class="heading">Contact</h1>
+        <div class="socail-icons">
+            <a href="https://github.com/Vizosul-Natso" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/vizosulnatso/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-discord"></i>
+        </div>
+        <h1 id="mail" class="email" style="margin-bottom: 20vh;"><i class="fa-solid fa-envelope"></i> vizonatso0@gmail.com</h1>
+    </section>
+
+    <!-- Script -->
+    <script>
+        
+const toggleswitch = document.querySelector('input[type="checkbox"]');
+const toggleText = document.getElementById('toogle-text');
+const image1 = document.getElementById('image1');
+const image2 = document.getElementById('image2');
+const image3 = document.getElementById('image3');
+const span1 = document.getElementById('span1');
+function darkMode (){
+    toggleText.innerHTML = 'Dark mode';
+    span1.style.color = "white";
+}
+
+function lightMode (){
+    toggleText.innerHTML = 'Light mode';
+    span1.style.color = "black";
+}
+
+function switchTheme(event) {
+    if (event.target.checked){
+        document.documentElement.setAttribute('data-theme','light');
+        lightMode();
+        localStorage.setItem('theme', 'light');
+    }else{
+        document.documentElement.setAttribute('data-theme','dark');
+        darkMode();
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+//event listener
+toggleswitch.addEventListener('change', switchTheme);
+
+const currentTheme = localStorage.getItem('theme');
+if(currentTheme){
+    document.documentElement.setAttribute('data-theme',currentTheme);
+    if(currentTheme==='dark'){
+        toggleswitch.checked = false;
+        darkMode();
+        
+    }
+}
+
+    </script>
+</body>
+</html>
